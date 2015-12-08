@@ -1,0 +1,2575 @@
+// =======================================
+// Layout Style
+// =======================================
+#header, #footer, #container {
+	width: 100%;
+}
+#header {
+	position: fixed;
+	height: 40px;
+	background: $bg-nav-depth;
+	z-index: 100;
+	.wrap {
+		h1 {
+			font-family: "Myriad Pro";
+			font-size: 16px;
+			font-weight: normal;
+			color: #fff;
+			line-height: 40px;
+			margin: 0;
+		}
+	}
+}
+#header {
+	.wrap {
+		> h1 {
+			@include span(2);
+			@include susy-breakpoint($tablet, 8) {
+				@include span(2);
+			}
+			@include susy-breakpoint($desktop, 12) {
+				@include span(2);
+			}
+		}
+	}
+}
+#header {
+	.wrap {
+		.top-menu {
+			height: 100%;
+			font-size: 12px;
+			text-align: center;
+			> a {
+				float: left;
+				display: block;
+				color: #ccc;
+				min-width: 140px;
+				height: 100%;
+				line-height: 40px;
+				padding-left: 34px;
+				padding-right: 12px;
+				i {
+					font-size: 18px;
+					margin-right: 6px;
+					vertical-align: middle;
+				}
+				&:hover, &:focus, &.selected {
+					color: #fff;
+					background: lighten($bg-nav-depth, 20%);
+					&:before {
+						color: #fff;
+					}
+				}
+			}
+		}
+	}
+}
+#header {
+	.wrap {
+		.top-menu {
+			> a {
+				position: relative;
+				&:before {
+					font-size: 14px;
+					color: #ccc;
+					position: absolute;
+				}
+				&:nth-of-type(1):before {
+					font-family: 'FontAwesome';
+					content: "\f274";
+					left: 33px;
+				}
+				&:nth-of-type(2):before {
+					font-family: 'FontAwesome';
+					content: "\f013";
+					left: 36px;
+				}
+				&:nth-of-type(3):before {
+					font-family: 'FontAwesome';
+					content: "\f09c";
+					left: 35px;
+				}
+			}
+		}
+	}
+}
+#header {
+	.wrap {
+		.top-menu {
+			display: none;
+			@include susy-breakpoint($tablet, 8) {
+				float: right;
+			}
+			@include susy-breakpoint($desktop, 12) {
+				display: inline-block;
+			}
+		}
+		.mobile-menu {
+			padding: 20px;
+			padding-right: 0;
+			.menu-button {
+				font-size: 12px;
+				color: #fff;
+				margin-bottom: $base-line-height;
+				i.fa {
+					font-size: 18px;
+					padding-right: 6px;
+					vertical-align: top;
+				}
+			}
+			> ul {
+				li {
+					border-bottom: 1px solid #a547c0;
+					a {
+						display: inline-block;
+						line-height: 48px;
+						font-size: 16px;
+						color: #fff;
+						padding: 0 6px;
+						i.fa {
+							font-size: 20px;
+							width: 40px;
+						}
+						&:hover, &:focus, &.active {
+							color: $font-color-yellow;
+						}
+					}
+					> ul {
+						background: #a547c0;
+						padding: 10px 0;
+						li {
+							a {
+								display: inline-block;
+								line-height: 28px;
+								font-size: 14px;
+								padding-left: 46px;
+								&:hover, &:focus, &.active {
+									color: $font-color-yellow;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+#header {
+	.wrap {
+		.top-button {
+			text-align: right;
+			margin-top: 5px;
+			.menu-button {
+				display: inline-block;
+				width: 30px;
+				height: 30px;
+				color: #ccc;
+				text-align: center;
+				border: 1px solid #999;
+				span {
+					display: none;
+				}
+				&:before {
+					font-family: 'FontAwesome';
+					content: "\f0c9";
+					font-size: 18px;
+					line-height: 29px;
+				}
+			}
+		}
+		.search-button {
+			@extend .menu-button;
+			&:before {
+				content: "\f002" !important;
+			}
+		}
+	}
+}
+#header {
+	.wrap {
+		.top-button {
+			@include span(2 float last);
+			display: inline-block;
+			.search-button {
+				display: inline-block;
+			}
+			@include susy-breakpoint($tablet, 8) {
+				display: inline-block;
+				@include span(2 float last);
+				.search-button {
+					display: none;
+				}
+			}
+			@include susy-breakpoint($desktop, 12) {
+				display: none;
+				@include span(6 float last);
+			}
+		}
+	}
+}
+#container {
+	position: relative;
+	min-height: 480px;
+	padding-top: 40px;
+	background: #fff;
+	overflow: hidden;
+	clear: both;
+	@include susy-breakpoint($tablet, 8) {
+		min-height: 680px;
+	}
+	@include susy-breakpoint($desktop, 12) {
+		min-height: 750px;
+	}
+}
+#footer {
+	position: relative;
+	height: 40px;
+	border-top: 1px solid #fff;
+	background: $bg-default;
+	overflow: hidden;
+	.copyright {
+		font-family: Verdana;
+		font-style: normal;
+		font-size: 12px;
+		text-align: center;
+		line-height: 40px;
+	}
+}
+
+// =======================================
+// index.html (Merchant Login)
+// =======================================
+.login-box {
+	h1 {
+		font-size: 30px;
+		font-weight: normal;
+		text-align: center;
+		margin-bottom: 32px;
+	}
+}
+.login-box {
+	.search-set {
+		display: inline-block;
+		@include span(full);
+		overflow: hidden;
+		margin-bottom: 27px;
+		[class^="tab-"] {
+			display: inline-block;
+			float: left;
+			width: 50%;
+			height: 30px;
+			line-height: 30px;
+			text-align: center;
+			color: #999;
+			background: #fff;
+			&:focus {
+				color: $font-default;
+				background: #fdfdfd;
+			}
+			&.selected {
+				color: #fff;
+				background: $bg-default-purple;
+			}
+		}
+	}
+}
+.login-box {
+	.login-box-set {
+		> li {
+			position: relative;
+			margin-bottom: 10px;
+			&:last-child {
+				margin-bottom: 0;
+			}
+			input {
+				font-size: 13px;
+				width: 100%;
+				height: 50px;
+				padding-left: 15px;
+				padding-right: 70px;
+				border: 0px;
+				cursor: default;
+				@include susy-breakpoint($tablet, 8) {
+					font-size: 14px;
+					padding-left: 20px;
+				}
+			}
+			> ul {
+				display: none;
+				max-height: 160px;
+				overflow-y: auto;
+			}
+			.checkbox {
+				text-align: left;
+				margin-bottom: 14px;
+				.store-label {
+					color: #fff;
+				}
+			}
+			.btn-default {
+				font-size: 24px;
+				width: 100%;
+				height: 50px;
+				margin-left: 0;
+				line-height: 50px;
+			}
+		}
+	}
+}
+.login-box {
+	.login-box-set {
+		> li {
+			button {
+				position: absolute;
+				top: 0;
+				right: 0;
+				width: 50px;
+				height: 50px;
+				border-left: 1px solid $bg-default;
+				&:before {
+					font-size: 20px;
+					color: $font-default;
+				}
+				&:hover {
+					background: #faf6fb;
+					&:before {
+						color: $bg-default-purple;
+					}
+				}
+				&.btn-flag:before {
+					font-family: 'FontAwesome';
+					content: '\f024';
+				}
+			}
+			button.active {
+				border-top: 3px solid $font-default;
+				border-left: 3px solid $font-default;
+				border-right: 3px solid $font-default;
+				&:before {
+					color: $font-color-purple;
+				}
+			}
+		}
+	}
+}
+.login-box {
+	.login-box-set {
+		> li {
+			.input-clear {
+				position: absolute;
+				top: 0;
+				right: 50px;
+				width: 50px;
+				height: 50px;
+				border-left: 0;
+				&:before {
+					color: #d2d2d2;
+				}
+				&:hover {
+					background: none;
+					&:before {
+						color: $bg-default-purple;
+					}
+				}
+			}
+			.input-clear.active {
+				display: none;
+			}
+		}
+	}
+}
+.login-box {
+	.login-box-set {
+		> li {
+			> ul {
+				> li {
+					background: $font-default;
+					color: #a1a1a1;
+					a {
+						display: block;
+						max-width: 100%;
+						padding: 3px 20px;
+					}
+					&:first-child {
+						padding-top: 12px;
+					}
+					&:last-child {
+						padding-bottom: 12px;
+					}
+					&:hover, &:focus, &.selected {
+						a {
+							color: #fff;
+						}
+					}
+					&.select-style {
+						text-align: center;
+						.stb-select-container {
+							min-width: 75px;
+							border: 0;
+							color: #fff;
+							> span {
+								overflow: inherit;
+							}
+							&:hover, &:focus, &.selected {
+								&::after {
+									color: #fff;
+									opacity: 1;
+								}
+							}
+							.stb-select {
+								top: -5px;
+								max-height: 40px;
+								border: 0;
+								> li {
+									padding-top: 0;
+									padding-bottom: 0;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+#container.login-bg {
+	background: $bg-default;
+	padding-bottom: 0;
+	.wrap {
+		padding-top: 22px;
+		padding-bottom: 22px;
+		overflow: hidden;
+		.login-box {
+			@include span(4);
+		}
+		@include susy-breakpoint($tablet, 8) {
+			padding-top: 42px;
+			padding-bottom: 42px;
+			.login-box {
+				@include span(4 at 3);
+				.search-set {
+					display: none;
+				}
+			}
+		}
+		@include susy-breakpoint($desktop, 12) {
+			padding-top: 105px;
+			padding-bottom: 105px;
+			.login-box {
+				@include span(4 at 5);
+			}
+		}
+	}
+}
+
+// =======================================
+// book-list.html (Book a Service - Search Salon)
+// =======================================
+.recommend {
+	width: 100%;
+	@extend %bg-common;
+}
+.list-type {
+	> h5 {
+		@include sub-title($fz: 14px, $ta: center, $mb: 8px);
+		@include susy-breakpoint($tablet, 4) {
+			@include sub-title;
+		}
+	}
+}
+.list-type {
+	.select-style {
+		position: relative;
+		text-align: center;
+		margin-bottom: 15px;
+		.stb-select-container {
+			width: 235px;
+			font-size: 12px;
+			@include susy-breakpoint($mobile, 6) {
+				width: 100%;
+			}
+			@include susy-breakpoint($tablet, 8) {
+				width: 150px;
+			}
+		}
+	}
+	@include susy-breakpoint($tablet, 8) {
+		.select-style {
+			position: absolute;
+			right: 0;
+			top: 13px;
+		}
+	}
+	@include susy-breakpoint($desktop, 12) {
+		.select-style {
+			top: 10px;
+		}
+	}
+}
+.list-type {
+	position: relative;
+	padding: 27px 20px 30px 20px;
+	overflow: hidden;
+	> ul {
+		overflow: hidden;
+		clear: both;
+	}
+	@include susy-breakpoint(500px, 4) {
+		@include container(500px);
+		padding-left: 0;
+		padding-right: 0;
+	}
+	@include susy-breakpoint($tablet, 8) {
+		@include container($tablet);
+	}
+	@include susy-breakpoint($desktop, 12) {
+		@include container($desktop);
+	}
+}
+.list-img-box {
+	width: 235px;
+	background: #fff;
+	border: 1px solid $border-gray;
+	margin-left: auto;
+	margin-right: auto;
+	overflow: hidden;
+	.col-3 {
+		overflow: hidden;
+		> img {
+			width: 235px;
+			height: 235px;
+		}
+	}
+	.col-3-info {
+		text-align: left;
+		padding: 6px  10px;
+		.title {
+			color: #333;
+			max-width: 120px;
+			@extend %text-wrap;
+		}
+		.star {
+			float: right;
+			letter-spacing: -0.1em;
+		}
+		.add {
+			color: #999;
+			max-width: 208px;
+			@extend %text-wrap;
+			display: block;
+			&:before {
+				font-family: 'FontAwesome';
+				content: "\f041";
+				font-size: 18px;
+				padding-right: 6px;
+			}
+		}
+	}
+}
+.list-type {
+	> ul {
+		> li {
+			margin-bottom: 20px;
+		}
+		@include susy-breakpoint($mobile, 6) {
+			> li {
+				@include gallery(3 of 6);
+			}
+		}
+		@include susy-breakpoint($tablet, 8) {
+			> li {
+				@include gallery(3 of 9);
+			}
+		}
+		@include susy-breakpoint($desktop, 12) {
+			> li {
+				@include gallery(3 of 12);
+			}
+		}
+	}
+}
+
+// =======================================
+// book-store-about.html (Book a Service - Select Salon)
+// =======================================
+.salon-tab-panel {
+	overflow: hidden;
+	clear: both;
+}
+.title-btn-bg {
+	position: relative;
+	@include span(full);
+	background: $bg-default-purple;
+	border-top: 1px solid #a547c0;
+	clear: both;
+	.title-btn {
+		line-height: 56px;
+		> h3 {
+			@include wh-center;
+			font-size: 100%;
+			color: #eade25;
+			@include susy-breakpoint($mobile, 6) {
+				font-size: initial;
+			}
+		}
+		[class^="btn-"] {
+			position: relative;
+			font-size: 12px;
+			color: #fff;
+			padding: 0 20px;
+			&:before {
+				position: absolute;
+				font-family: 'FontAwesome';
+				font-size: 24px;
+			}
+		}
+		.btn-left {
+			float: left;
+			&:before {
+				content: "\f104";
+				top: -2px;
+				left: 0;
+			}
+		}
+		.btn-right {
+			float: right;
+			&:before {
+				content: "\f105";
+				top: -2px;
+				right: 0;
+			}
+		}
+	}
+}
+.salon-tab {
+	position: relative;
+	height: 40px;
+	clear: both;
+	padding: 0;
+	> nav {
+		position: relative;
+		padding: 0;
+		> a {
+			float: left;
+			display: block;
+			font-size: 12px;
+			text-align: center;
+			width: 33.33%;
+			height: 100%;
+			line-height: 36px;
+			padding: 0 10px;
+			border-top: 4px solid #fff;
+			&:hover, &:focus {
+				border-top: 4px solid #e8e8e8;
+			}
+			&.selected {
+				border-top: 4px solid #dfbde9;
+			}
+		}
+		@include susy-breakpoint($tablet, 8) {
+			position: absolute;
+			left: 50%;
+			transform: translateX( -50%);
+			> a {
+				width: 100px;
+			}
+		}
+	}
+}
+.salon-bg {
+	position: relative;
+	height: 240px;
+	text-align: center;
+	overflow: hidden;
+	img {
+		@include wh-center;
+		min-width: 1200px;
+		width: auto;
+		@include susy-breakpoint($desktop, 12) {
+			width: 100%;
+			height: auto;
+		}
+	}
+}
+.about-list {
+	.box-01 {
+		background: #f7f7f7;
+		padding: 10px 20px;
+		overflow: hidden;
+		> h3 {
+			font-size: 24px;
+			color: $font-color-purple;
+			line-height: 2;
+			padding-top: 20px;
+			border-bottom: 1px solid $border-gray;
+			overflow: hidden;
+			.star {
+				display: block;
+				font-size: 18px;
+				line-height: 1;
+				margin-bottom: 10px;
+				.fa {
+					margin-right: 0;
+				}
+			}
+			@include susy-breakpoint($mobile, 6) {
+			padding-top: 0;
+				.star {
+					float: right;
+					line-height: 3;
+					margin-bottom: 0;
+				}
+			}
+		}
+		dl {
+			padding-top: 20px;
+			padding-bottom: 20px;
+			dt {
+				font-size: 12px;
+				color: #999;
+				font-weight: bold;
+			}
+			dd {
+				font-size: 18px;
+				line-height: 1.5;
+				padding-bottom: 20px;
+				&:last-child {
+					padding-bottom: 0;
+				}
+			}
+		}
+	}
+	.box-02 {
+		padding: 10px 20px;
+		border: 0;
+		> h3 {
+			font-size: 18px;
+			i.fa {
+				font-size: 24px;
+				vertical-align: middle;
+				margin-right: 4px;
+			}
+		}
+		ol {
+			padding-top: 26px;
+			li {
+				font-size: 12px;
+				padding-bottom: 10px;
+				line-height: 20px;
+				span {
+					background: $bg-default;
+					display: inline-block;
+					width: 36px;
+					color: #333;
+					text-align: center;
+					margin-right: 16px;
+				}
+				&:first-child {
+					span {
+						background: #f3acac;
+					}
+				}
+				&:last-child {
+					span {
+						background: #c1dce7;
+					}
+				}
+			}
+		}
+	}
+	.box-03 {
+		width: 100%;
+		height: 300px;
+		iframe {
+			width: 100%;
+			height: 100%;
+			border: 0;
+		}
+	}
+}
+.about-list.wrap {
+	max-width: 100%;
+	padding: 0;
+	overflow: hidden;
+	[class^="box-"] {
+		min-height:300px;
+	}
+	@include susy-breakpoint($mobile, 6) {
+		.box-01 {
+			clear: both;
+		}
+		.box-02 {
+			@include span(3);
+		}
+		.box-03 {
+			@include span(3 float last);
+			padding-top: 20px;
+			padding-bottom: 20px;
+			padding-right: 20px;
+			iframe {
+				border: 1px solid $border-gray;
+			}
+		}
+	}
+	@include susy-breakpoint($desktop, 12) {
+		@include container($desktop);
+		margin-top: 40px;
+		margin-bottom: 40px;
+		.box-01 {
+			@include span(6);
+		}
+		.box-02 {
+			@include span(3);
+			border: 1px solid $border-gray;
+		}
+		.box-03 {
+			@include span(3);
+			@include last;
+			padding: 0;
+		}
+	}
+}
+
+// =======================================
+// book-store-service.html (Book a Service - Service)
+// =======================================
+.hair-style-set {
+	> li {
+		background: #555;
+		border-bottom: 1px solid #fff;
+		&:last-child {
+			border-bottom: 0;
+		}
+		> a {
+			font-size: 16px;
+			color: #fff;
+			padding: 0 20px;
+			line-height: 60px;
+		}
+		.btn-down {
+			float: right;
+			&:before {
+				font-family: 'FontAwesome';
+				content: "\f107";
+				font-size: 24px;
+				color: #fff;
+				line-height: 60px;
+				padding: 0 30px;
+			}
+		}
+	}
+}
+.hair-style-set {
+	> li {
+		.panel {
+			@extend %bg-common;
+			display: none;
+		}
+		&:first-child {
+			.panel {
+				display: block;
+			}
+		}
+		&:focus, &.active {
+			.btn-down:before {
+				content: "\f106";
+				line-height: 58px;
+			}
+			.panel {
+				display: block;
+			}
+		}
+	}
+}
+.hair-style-set {
+	padding: 0;
+	> li {
+		.panel {
+			hr.line {
+				height: 1px;
+				border: 0;
+				margin-left: 40px;
+				margin-right: 40px;
+				background: $border-gray;
+			}
+			> ul {
+				padding: 40px;
+				overflow: hidden;
+				> li {
+					min-height: auto;
+					display: block;
+					.cell {
+						display: block;
+					}
+				}
+			}
+		}
+	}
+	@include susy-breakpoint($mobile, 6) {
+		> li {
+			.panel {
+				hr.line {
+					margin-left: 30px;
+					margin-right: 30px;
+					background: $border-gray;
+				}
+				> ul {
+					padding: 30px;
+				}
+			}
+		}
+	}
+	@include susy-breakpoint($tablet, 8) {
+		margin-bottom: 0;
+	}
+	@include susy-breakpoint($desktop, 12) {
+		margin-bottom: 30px;
+	}
+}
+.hair-style-set {
+	> li {
+		.panel {
+			> ul {
+				> li:nth-of-type(1) {
+					text-align: center;
+					.cell {
+						&.hair-img {
+							width: 100%;
+							height: 100%;
+							img {
+								max-width: 100%;
+								max-height: 100%;
+								vertical-align: middle;
+								border: 1px solid $border-gray;
+							}
+						}
+					}
+				}
+				> li:nth-of-type(2) {
+					padding-left: 0;
+					.cell {
+						> p {
+							font-size: 12px;
+							&:last-child {
+								padding-bottom: 8px;
+							}
+						}
+						.title {
+							font-size: 20px;
+							color: $font-color-purple;
+							padding-top: 10px;
+							padding-bottom: 8px;
+						}
+						.iconfont {
+							font-size: 22px;
+						}
+					}
+				}
+				> li:nth-of-type(3) {
+					.cell {
+						padding-bottom: 8px;
+						span {
+							font-size: 18px;
+							font-weight: bold;
+							color: $font-color-title;
+						}
+					}
+				}
+				> li:nth-of-type(4) {
+					.cell {
+						.btn-default {
+							@include btn-default($miw:120, $fz:18);
+							width: 100%;
+							line-height: 2;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.hair-style-set {
+	> li {
+		.panel {
+			> ul {
+				@include susy-breakpoint($mobile, 6) {
+					> li:nth-of-type(1) {
+						@include span(2);
+						@include first;
+					}
+					> li:nth-of-type(2) {
+						@include span(4);
+						@include last;
+					}
+					> li:nth-of-type(3) {
+						@include span(4);
+						@include last;
+					}
+					> li:nth-of-type(4) {
+						@include span(4);
+						@include last;
+					}
+				}
+			}
+		}
+	}
+}
+
+.hair-style-set {
+	> li {
+		.panel {
+			> ul {
+				@include susy-breakpoint($tablet, 8) {
+					> li:nth-of-type(1) {
+						@include span(2);
+					}
+					> li:nth-of-type(2) {
+						@include span(4);
+						.cell {
+							.title {
+								font-size: 30px;
+								margin-bottom: 20px;
+							}
+						}
+					}
+					> li:nth-of-type(3) {
+						@include span(2);
+						@include last;
+						.cell {
+							text-align: right;
+							padding-bottom: 20px;
+							span {
+								font-weight: bold;
+								letter-spacing: -0.5px;
+							}
+							span:first-child {
+								font-size: 30px;
+								display: block;
+							}
+							span:last-child {
+								font-size: 18px;
+							}
+						}
+					}
+					> li:nth-of-type(4) {
+						@include span(2);
+						@include last;
+					}
+				}
+			}
+		}
+	}
+}
+.hair-style-set {
+	> li {
+		.panel {
+			> ul {
+				@include susy-breakpoint($desktop, 12) {
+					> li {
+						min-height: 140px;
+						display: table;
+						.cell {
+							display: table-cell;
+							vertical-align: middle;
+						}
+					}
+					> li:nth-of-type(1) {
+						@include span(2);
+						.cell {
+							&.hair-img {
+								width: 140px;
+								height: 140px;
+							}
+						}
+					}
+					> li:nth-of-type(2) {
+						@include span(5);
+						padding-left: 20px;
+					}
+					> li:nth-of-type(3) {
+						@include span(3);
+						.cell {
+							padding-bottom: 0;
+							span:first-child {
+								font-size: 24px;
+								display: inline-block;
+							}
+							span:last-child {
+								font-size: 24px;
+							}
+						}
+					}
+					> li:nth-of-type(4) {
+						@include span(2);
+						@include last;
+					}
+				}
+			}
+		}
+	}
+}
+
+// =======================================
+// book-store-reviews.html (Book a Service - Reviews)
+// =======================================
+.reviews-bg {
+	@extend .salon-bg;
+	height: 180px;
+	padding-top: 54px;
+	background: #f7f7f7;
+	span {
+		display: inline-block;
+		max-height: 100%;
+		vertical-align: middle;
+		color: inherit;
+		&:first-child {
+			font-size: 50px;
+			padding-right: 15px;
+			border-right: 1px solid #d5d5d5;
+		}
+		&:last-child {
+			font-size: 12px;
+			text-align: left;
+			padding-left: 10px;
+			.fa {
+				font-size: 24px;
+				color: $font-color-purple;
+				padding-bottom: 8px;
+				margin-right: 4px;
+				&:last-child {
+					margin-right: 0;
+				}
+			}
+		}
+	}
+}
+.reviews-bg {
+	@include susy-breakpoint(480px) {
+		height: 180px;
+		padding-top: 36px;
+		span {
+			&:first-child {
+				font-size: 72px;
+			}
+		}
+	}
+	@include susy-breakpoint($mobile, 6) {
+		span {
+			&:first-child {
+				padding-right: 40px;
+			}
+			&:last-child {
+				padding-left: 40px;
+				.fa {
+					font-size: 26px;
+				}
+			}
+		}
+	}
+	@include susy-breakpoint($tablet, 8) {
+		span {
+			&:first-child {
+				padding-right: 50px;
+			}
+			&:last-child {
+				padding-left: 50px;
+				.fa {
+					font-size: 30px;
+				}
+			}
+		}
+	}
+}
+.reviews-list {
+	> ul {
+		padding-bottom: 25px;
+		border-bottom: 1px solid #d5d5d5;
+		overflow: hidden;
+		@include susy-breakpoint($mobile, 6) {
+			padding-top: 25px;
+			padding-bottom: 25px;
+		}
+		@include susy-breakpoint($tablet, 8) {
+		}
+	}
+	> ul:first-child {
+		border-top: 1px solid #d5d5d5;
+	}
+	>.btn-more {
+		margin-top: 20px;
+		margin-bottom: 30px;
+	}
+}
+.reviews-list {
+	clear: both;
+	> ul {
+		> li:first-child {
+			position: relative;
+			min-height: 100px;
+			.name {
+				@include h-center;
+				font-size: 30px;
+				color: $font-color-purple;
+				text-align: center;
+				width: 100%;
+			}
+		}
+		> li:last-child {
+			.today-date {
+				font-size: 14px;
+				font-weight: bold;
+				color: #999;
+			}
+			.star {
+				font-size: 18px;
+				margin-left: 10px;
+			}
+			.designer {
+				margin: 10px 0 6px 0;
+				.iconfont-designer {
+					font-size: 20px;
+					margin-right: 4px;
+				}
+			}
+			.review {
+				font-size: 12px;
+				line-height: 2;
+			}
+		}
+	}
+}
+.reviews-list {
+	> ul {
+		> li:first-child {
+			@include span(4);
+		}
+		> li:last-child {
+			@include span(4);
+			@include last;
+		}
+		@include susy-breakpoint($mobile, 6) {
+			> li:first-child {
+				@include span(2);
+			}
+			> li:last-child {
+				@include span(4);
+				@include last;
+			}
+		}
+		@include susy-breakpoint($tablet, 8) {
+			> li:first-child {
+				@include span(2);
+			}
+			> li:last-child {
+				@include span(6);
+				@include last;
+			}
+		}
+		@include susy-breakpoint($desktop, 12) {
+			> li:first-child {
+				@include span(3);
+			}
+			> li:last-child {
+				@include span(9);
+				@include last;
+			}
+		}
+	}
+}
+
+// =======================================
+// book-store-booking.html (Booking)
+// =======================================
+.booking-bg {
+	@include span(full);
+	background: #f7f7f7;
+	clear: both;
+	.wrap {
+		> h5 {
+			@include sub-title;
+		}
+		&:after {
+			content:" ";
+			display:block;
+			clear:both;
+		}
+	}
+	.wrap:nth-of-type(1) {
+		padding-top: $base-line-height;
+		position: relative;
+		.btn-date {
+			display: block;
+			position: absolute;
+			top: 50px;
+			right: 30px;
+			color: #999;
+			&:before {
+				font-family: 'FontAwesome';
+				font-size: 20px;
+				content: "\f073";
+			}
+		}
+		.bk-input-date {
+			@include span(full);
+			height: $base-line-height*2;
+		}
+	}
+	.wrap:nth-of-type(2) {
+		padding-top: $base-line-height * 2;
+		padding-bottom: $base-line-height;
+		.selected-add {
+			@include btn-default($miw: 0, $fz: 12);
+			line-height: 21px;
+			.fa {
+				font-size: 10px;
+				margin-right: 4px;
+				margin-top: -1px;
+			}
+		}
+		.btn-search {
+			@include btn-default($miw: 0, $fz: 18);
+		}
+	}
+}
+.bk-select-date {
+	display: none;
+	position: relative;
+	overflow: hidden;
+	height: $base-line-height*4;
+	[class^="btn-date-"] {
+		position: relative;
+		font-family: 'FontAwesome';
+		font-size: 24px;
+		width: 40px;
+		height: $base-line-height*4;
+		background: #e0e0e0;
+		border: 1px solid #d5d5d5;
+		z-index: 10;
+	}
+	.btn-date-left {
+		float: left;
+		&:before {
+			content: "\f104";
+			top: 0;
+			left: -2px;
+		}
+	}
+	.btn-date-right {
+		float: right;
+		&:before {
+			content: "\f105";
+			top: 0;
+			right: -2px;
+		}
+	}
+}
+.bk-select-date {
+	ul {
+		@include span(full);
+		position: absolute;
+		top: 0;
+		padding: 0 50px;
+		z-index: 9;
+		li {
+			@include layout(7 0px/109px);
+			@include gallery(1 of 7);
+			font-size: 30px;
+			color: #555;
+			text-align: center;
+			height: $base-line-height*4;
+			padding-top: 10px;
+			background: #e0e0e0;
+			border: 1px solid #d5d5d5;
+			border-left: 0px;
+			&:first-child {
+				border-left: 1px solid #d5d5d5;
+			}
+			p {
+				font-size: 12px;
+			}
+			&:hover, &:focus, &.selected {
+				color: inherit;
+				background: #fff;
+				border: 1px solid $border-purple;
+				box-sizing: border-box;
+			}
+			&.today {
+				position: relative;
+				color: $border-purple;
+				overflow: hidden;
+				&:before {
+					display: block;
+					position: absolute;
+					top: 7px;
+					left: -23%;
+					width: 100%;
+					line-height: 16px;
+					font-size: 11px;
+					color: #fff;
+					text-align: center;
+					transform: rotate(-45deg);
+					background: $border-purple;
+					content: 'Today';
+				}
+				&:hover, &:focus, &.selected {
+					color: inherit;
+					&:before {
+						display: none;
+					}
+				}
+			}
+			@include susy-breakpoint($tablet) {
+				&.today {
+					&:before {
+						top: 10px;
+						left: -30%;
+					}
+				}
+			}
+		}
+	}
+}
+.booking-bg {
+	@include susy-breakpoint(704px) {
+		.wrap:nth-of-type(1) {
+			@include layout(6 20px/94px);
+			.bk-select-date {
+				@include span(5);
+				display: block;
+			}
+			.btn-date {
+				position: relative;
+				top: 0;
+				right: 0;
+				@include span(1);
+				@include last;
+				@include btn-default($miw: 0);
+				height: $base-line-height*4;
+			}
+			.bk-input-date {
+				display: none;
+			}
+		}
+	}
+	@include susy-breakpoint($tablet) {
+		.wrap:nth-of-type(1) {
+			@include layout(5 20px/128px);
+			.bk-select-date {
+				@include span(4);
+			}
+			.btn-date {
+				@include span(1);
+				@include last;
+			}
+		}
+	}
+	@include susy-breakpoint($desktop) {
+		.wrap:nth-of-type(1) {
+			@include layout(7 20px/120px);
+			.bk-select-date {
+				@include span(6);
+			}
+			.btn-date {
+				@include span(1);
+				@include last;
+			}
+		}
+	}
+}
+.bk-select-service {
+	@include layout(6 10px/41px);
+	@include span(full);
+	margin-bottom: 10px;
+	.select-style {
+		margin-bottom: 10px;
+		&:after {
+			content:" ";
+			display:block;
+			clear:both;
+		}
+		.stb-select-container {
+			@include span(full);
+			background: #fff;
+			padding-left: 10px;
+			padding-right: 40px;
+			height: $base-line-height*2;
+			span {
+				line-height: $base-line-height*2;
+			}
+			&::after {
+				top: 8px;
+				right: 15px;
+			}
+			.stb-select {
+				top: 41px;
+			}
+		}
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}
+.bk-select-service {
+	.select-style:nth-of-type(1) {
+		@include span(6);
+		@include last;
+	}
+	.select-style:nth-of-type(2) {
+		@include span(5);
+	}
+	[class^="selected-"] {
+		@include span(1);
+		@include last;
+	}
+	.selected-del {
+		@include btn-default($miw: 38);
+		font-family: 'FontAwesome';
+		font-size: 18px;
+		height: $base-line-height*2;
+		&:before {
+			content: "\f068";
+		}
+	}
+	.selected-default {
+		@extend .selected-del;
+		@include btn-default($miw: 38, $bg-color: #c2c2c2);
+		font-size: 20px;
+		color: #777;
+		cursor: default;
+		&:hover, &:focus {
+			background: #c2c2c2;
+			text-shadow: none;
+		}
+	}
+}
+.booking-bg {
+	.wrap:nth-of-type(2) {
+		> h5 {
+			@include span(4);
+		}
+		.selected-add {
+			@include span(2);
+			@include last;
+			position: relative;
+			top:-10px;
+		}
+	}
+	@include susy-breakpoint($mobile, 6) {
+		.wrap:nth-of-type(2) {
+			> h5 {
+				@include span(5);
+			}
+			.selected-add {
+				@include span(1);
+				@include last;
+			}
+		}
+	}
+	@include susy-breakpoint($tablet) {
+		.wrap:nth-of-type(2) {
+			@include layout(15 10px/40px);
+			> h5 {
+				@include span(12);
+			}
+			.selected-add {
+				@include span(2);
+			}
+			.bk-select-service {
+				margin-bottom: 0;
+				.select-style:nth-of-type(1) {
+					@include span(7);
+				}
+				.select-style:nth-of-type(2) {
+					@include span(7);
+				}
+				[class^="selected-"] {
+					@include span(1);
+					@include last;
+				}
+			}
+		}
+	}
+	@include susy-breakpoint($desktop) {
+		.wrap:nth-of-type(2) {
+			@include layout(18 10px/45px);
+			> h5 {
+				@include span(10);
+			}
+			.selected-add {
+				@include span(2);
+			}
+			.bk-select-service {
+				.select-style:nth-of-type(1) {
+					@include span(6);
+				}
+				.select-style:nth-of-type(2) {
+					@include span(6);
+				}
+				[class^="selected-"] {
+					width: auto;
+					min-width: 42px;
+					float: left;
+				}
+			}
+		}
+	}
+}
+.booking-bg {
+	.wrap:nth-of-type(2) {
+		.btn-search {
+			@include layout(4 20px/65px);
+			@include span(full);
+			@include susy-breakpoint($tablet) {
+				@include layout(8 20px/65px);
+				@include span(3);
+			}
+			@include susy-breakpoint($desktop) {
+				@include layout(12 20px/65px);
+				@include span(3);
+				margin-top: $base-line-height;
+			}
+		}
+	}
+}
+.booking-result {
+	padding-top: $base-line-height*2;
+	padding-bottom: $base-line-height*2;
+	clear: both;
+	.wrap {
+		overflow: hidden;
+		> h5 {
+			@include span(full);
+			@include sub-title;
+		}
+	}
+}
+.booking-list {
+	@extend .reviews-list;
+	margin-bottom: $base-line-height;
+	> h4 {
+		font-size: 12px;
+		font-weight: bold;
+		color: #fff;
+		line-height: 32px;
+		padding: 0 10px;
+		background: #d5d5d5;
+	}
+}
+.booking-list {
+	> ul {
+		padding-top: 20px;
+		padding-bottom: 10px;
+		> li {
+			min-height: 140px;
+			display: table;
+			> p {
+				font-size: 12px;
+				margin-bottom: 6px;
+				.fa {
+					font-size: 14px;
+					letter-spacing: -1.5px;
+				}
+			}
+			.title {
+				font-size: 14px;
+				font-weight: bold;
+				color: #999;
+				margin-bottom: 10px;
+			}
+		}
+	}
+}
+.booking-list {
+	> ul {
+		> li {
+			@include layout(2 20px/160px);
+			display: inline-block;
+		}
+		> li:nth-of-type(1) {
+			@include span(1);
+			.designer {
+				width: 100%;
+				height: 100%;
+				img {
+					max-width: 100%;
+					max-height: 100%;
+					border: 1px solid $border-gray;
+				}
+			}
+		}
+		> li:nth-of-type(2) {
+			@include span(1);
+			@include last;
+			box-sizing: border-box;
+			max-width: 100%;
+		}
+		> li:nth-of-type(3) {
+			@include span(full);
+			margin-top: $base-line-height;
+			.designer {
+				padding-bottom: 0;
+				span:first-child {
+					font-size: 24px;
+					display: inline-block;
+				}
+				span:last-child {
+					font-size: 24px;
+				}
+			}
+			.title {
+				font-size: 12px;
+				margin-bottom: 6px;
+				clear: both;
+			}
+			.time {
+				margin-bottom: 10px;
+				overflow: hidden;
+				&:last-child {
+					margin-bottom: 0;
+				}
+				button {
+					@include layout(3 10px/80px);
+					@include gallery(1 of 3);
+					font-size: 12px;
+					color: #fff;
+					background: #555;
+					line-height: 38px;
+					border: 1px solid #555;
+					margin-bottom: 10px;
+					&:last-child {
+						margin-bottom: 0;
+					}
+					&:hover, &.selected {
+						@extend .btn-selected;
+						line-height: 38px;
+					}
+				}
+			}
+		}
+	}
+}
+.booking-list {
+	> ul {
+		@include susy-breakpoint(480px) {
+			> li {
+				@include layout(3 18px/136px);
+			}
+			> li:nth-of-type(1) {
+				@include span(1);
+			}
+			> li:nth-of-type(2) {
+				@include span(2);
+				@include last;
+			}
+			> li:nth-of-type(3) {
+				@include span(full);
+			}
+		}
+		@include susy-breakpoint($mobile) {
+			> li {
+				@include layout(4 16px/120px);
+			}
+			> li:nth-of-type(1) {
+				@include span(1);
+			}
+			> li:nth-of-type(2) {
+				@include span(3);
+				@include last;
+			}
+			> li:nth-of-type(3) {
+				@include span(full);
+				margin-top: 10px;
+				.time {
+					button {
+						@include layout(6 10px/98px);
+						@include gallery(1 of 6);
+					}
+				}
+			}
+		}
+		@include susy-breakpoint($tablet) {
+			> li {
+				@include layout(5 20px/128px);
+			}
+			> li:nth-of-type(1) {
+				@include span(1);
+			}
+			> li:nth-of-type(2) {
+				@include span(4);
+				@include last;
+			}
+			> li:nth-of-type(3) {
+				@include span(full);
+			}
+		}
+		@include susy-breakpoint($desktop) {
+			> li {
+				@include layout(6 22px/141px);
+			}
+			> li:nth-of-type(1) {
+				@include span(1);
+			}
+			> li:nth-of-type(2) {
+				@include span(1);
+			}
+			> li:nth-of-type(3) {
+				@include span(4);
+				@include last;
+				margin-top: 0;
+			}
+		}
+	}
+}
+.booking-result {
+	.btn-next {
+		@include btn-default($miw: 0, $fz: 18);
+		@include layout(4 20px/65px);
+		@include span(full);
+		@include susy-breakpoint($tablet) {
+			@include layout(8 20px/65px);
+			@include span(3);
+			@include last;
+		}
+		@include susy-breakpoint($desktop) {
+			@include layout(12 20px/65px);
+			@include span(3);
+			@include last;
+		}
+	}
+}
+
+// =======================================
+// my-appointment-upcoming.html (Upcoming)
+// =======================================
+.my-appointment-bg {
+	@extend .title-btn-bg;
+	.title-btn {
+		line-height: $base-line-height * 2;
+		> a {
+			@include layout(2 0%/50%);
+			font-size: 16px;
+			color: #fff;
+			text-align: center;
+			&:focus, &.selected {
+				color: $font-color-yellow;
+			}
+			&:first-child {
+				@include span(1);
+				border-right: 1px solid #b568cb;
+			}
+			&:last-child {
+				@include span(1);
+				@include last;
+			}
+		}
+	}
+}
+.upcoming-list {
+	@extend .booking-list;
+	padding: 0;
+	margin-bottom: 0;
+	> ul {
+		padding-top: 20px;
+		padding-bottom: 0;
+		> li:nth-of-type(1) {
+			@include span(full);
+			text-align: center;
+		}
+		> li:nth-of-type(2) {
+			@include span(full);
+			padding: 0 20px;
+			margin-top: $base-line-height;
+			.title {
+				@include sub-title ($fz: 24px, $fw: normal, $mb: $base-line-height);
+				color: $font-color-purple;
+			}
+			[class^="selected-"] {
+				font-size: 14px;
+				margin-bottom: 10px;
+			}
+			.selected-day:before {
+				top: -5px;
+			}
+			.selected-choice:before {
+				top: -4px;
+				left: 0;
+			}
+			.selected-time:before {
+				top: -7px;
+			}
+		}
+		> li:nth-of-type(3) {
+			@include span(full);
+			.selected-price {
+				width: 100%;
+				padding: 20px;
+				background: #f7f7f7;
+				overflow: hidden;
+				.price {
+					font-size: 48px;
+					text-align: center;
+					padding-bottom: 20px;
+				}
+				[class^="btn-"] {
+					@include layout(2 10px/145px);
+					font-size: 18px;
+					line-height:$base-line-height * 2;
+				}
+				.btn-reschedule {
+					@extend .btn-default;
+					@include span(1);
+				}
+				.btn-cancel {
+					@extend .btn-signup;
+					@include span(1);
+					@include last;
+				}
+				.btn-salon-detail {
+					@extend .btn-cancle;
+					@include span(full);
+					margin-top: 10px;
+				}
+			}
+		}
+	}
+}
+.upcoming-list {
+	@include susy-breakpoint($mobile) {
+		> ul {
+			@include layout(3 19px/188px);
+			> li:nth-of-type(1) {
+				@include span(1);
+				padding-left: 20px;
+			}
+			> li:nth-of-type(2) {
+				@include span(2);
+				@include last;
+				padding: 0 20px 0 0;
+				margin-top: 0;
+			}
+			> li:nth-of-type(3) {
+				@include span(full);
+				margin-top: 15px;
+				.selected-price {
+					.price {
+						font-size: 48px;
+						text-align: center;
+						padding-bottom: 20px;
+					}
+					[class^="btn-"] {
+						@include layout(7 10px/80px);
+					}
+					.btn-reschedule {
+						@include span(2);
+					}
+					.btn-cancel {
+						@include span(2);
+					}
+					.btn-salon-detail {
+						@include span(3);
+						@include last;
+						margin-top: 0;
+					}
+				}
+			}
+		}
+	}
+	@include susy-breakpoint($desktop) {
+		padding-top: $base-line-height * 2;
+		margin-bottom: $base-line-height;
+		> ul {
+			padding-bottom: 20px;
+			@include layout(12 20px/65px);
+			> li:nth-of-type(1) {
+				@include span(3);
+				padding-left: 0;
+				.designer {
+					height: 230px;
+				}
+			}
+			> li:nth-of-type(2) {
+				@include span(5);
+			}
+			> li:nth-of-type(3) {
+				@include span(4);
+				@include last;
+				margin-top: 0;
+				overflow: hidden;
+				.selected-price {
+					@include layout(2 10px/125px);
+					.btn-reschedule {
+						@include span(1);
+					}
+					.btn-cancel {
+						@include span(1);
+						@include last;
+					}
+					.btn-salon-detail {
+						@include span(full);
+						margin-top: 10px;
+					}
+				}
+			}
+		}
+	}
+}
+
+// =======================================
+// my-appointment-history.html (History)
+// =======================================
+.day-setting {
+	margin-bottom: 10px;
+	@include layout(3 10px/147px);
+	overflow: hidden;
+	> button {
+		&:nth-of-type(1) {
+			@include span(1);
+		}
+		&:nth-of-type(2) {
+			@include span(1);
+		}
+		&:nth-of-type(3) {
+			@include span(1);
+			@include last;
+		}
+		@extend .btn-cancle;
+		font-size: 12px;
+		line-height: $base-line-height * 2;
+		&:focus, &.selected {
+			@extend .btn-selected;
+			font-size: 12px;
+			line-height: $base-line-height * 2;
+		}
+	}
+	.help {
+		@include span(full);
+		margin: 10px 0;
+		font-size: 12px;
+		i.fa {
+			font-size: 18px;
+			vertical-align: middle;
+			margin-right: 6px;
+		}
+	}
+	@include susy-breakpoint(670px) {
+		> button {
+			margin-bottom: 10px;
+			&:nth-of-type(1) {
+				width: auto;
+				margin-right: 10px;
+			}
+			&:nth-of-type(2) {
+				width: auto;
+				margin-right: 10px;
+			}
+			&:nth-of-type(3) {
+				float: left;
+				width: auto;
+				margin-right: 10px;
+			}
+		}
+		.help {
+			width: auto;
+		}
+	}
+}
+.history-list {
+	padding-top: $base-line-height * 2;
+	padding-bottom: $base-line-height * 2;
+	overflow: hidden;
+}
+
+// =======================================
+// my-appointment-history.html (History)
+// =======================================
+.booking-comfirm {
+	@extend .history-list;
+	padding: 0;
+	@include susy-breakpoint($desktop) {
+		padding: $base-line-height * 2 20px;
+	}
+}
+.booking-comfirm {
+	.info {
+		padding: 20px;
+		> h5 {
+			@include sub-title ($fz: 24px, $fw: normal, $mb: 18px);
+			color: $font-color-purple;
+		}
+		> ul {
+			li {
+				border-top: 1px solid $bg-default;
+				> p {
+					margin-top: $base-line-height;
+					margin-bottom: $base-line-height;
+				}
+				[class^="selected-"] {
+					font-size: 18px;
+				}
+				.service {
+					margin-top: $base-line-height;
+					margin-bottom: $base-line-height;
+					[class^="selected-"] {
+						&:before {
+							top: 0;
+						}
+					}
+					> p {
+						margin-top: 10px;
+						margin-bottom: 10px;
+					}
+					h4 {
+						@include sub-title ($fz: 12px, $fw: bold, $mb: 10px);
+						color: $font-color-purple;
+					}
+				}
+				&:last-child {
+					border-bottom: 1px solid $bg-default;
+				}
+			}
+		}
+	}
+}
+.booking-comfirm {
+	.pay {
+		width: 100%;
+		padding: $base-line-height;
+		padding-bottom: $base-line-height * 2;
+		background: $table-th-bg-color;
+		> p {
+			overflow: hidden;
+			clear: both;
+			&:nth-of-type(1) {
+				margin-top: $base-line-height;
+			}
+			&:nth-of-type(2) {
+				margin-bottom: $base-line-height;
+			}
+			&:nth-of-type(3) {
+				font-size: 48px;
+				text-align: right;
+				margin-top: $base-line-height;
+			}
+		}
+		.service {
+			span:first-child {
+				float: left;
+			}
+			span:last-child {
+				float: right;
+			}
+		}
+		.btn-book {
+			width: 100%;
+			margin-top: $base-line-height;
+			@include btn-default($fz: 24);
+		}
+	}
+}
+.booking-comfirm {
+	@include susy-breakpoint($desktop) {
+		@include layout(12 20px/65px);
+		.info {
+			@include span(8);
+			padding: 0;
+		}
+		.pay {
+			margin-top: 0;
+			padding: $base-line-height;
+			@include span(4);
+			@include last;
+		}
+	}
+}
+// =======================================
+// sign-up.html (History)
+// =======================================
+.sign-up {
+	margin-top: $base-line-height * 2;
+	margin-bottom: $base-line-height * 2;
+	margin-right: 0;
+	overflow: hidden;
+	> h5 {
+		@include sub-title ($fz: 24px, $fw: normal, $mb: $base-line-height);
+		color: $font-color-purple;
+	}
+	> dl {
+		padding-top: 10px;
+		padding-bottom: $base-line-height;
+		border-top: 1px solid $bg-default;
+		border-bottom: 1px solid $bg-default;
+		margin-bottom: 10px;
+		overflow: hidden;
+		clear: both;
+		dt, dd {
+			@include span(full);
+		}
+		dt {
+			font-size: 12px;
+			margin-bottom: 4px;
+			&.none {
+				display: none;
+			}
+		}
+		dd {
+			line-height: $base-line-height * 2;
+			margin-bottom: 10px;
+			> input {
+				@include span(full);
+				height: $base-line-height * 2;
+				line-height: $base-line-height * 2;
+			}
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+	> p {
+		font-size: 12px;
+		margin-bottom: $base-line-height;
+		> a {
+			color: $font-color-purple;
+			text-decoration: underline;
+		}
+	}
+	.btn-set {
+		@include layout(2 10px/240px);
+		a[class$="-button"] {
+			font-size: 18px;
+			line-height: $base-line-height * 2;
+		}
+		.submit-button {
+			@include span(1);
+			@extend .btn-default;
+		}
+		.clear-button {
+			@include span(1);
+			@include last;
+			@extend .btn-cancle;
+		}
+	}
+}
+.sign-up {
+	@include susy-breakpoint(640px) {
+		@include layout(8 16px/62px);
+		@include span(6);
+		@include w-center ($position: relative, $w-percent: 50%);
+		> dl {
+			padding-top: $base-line-height;
+			@include layout(6 20px/65px);
+			dt, dd {
+				line-height: $base-line-height * 2;
+				margin-bottom: 10px;
+			}
+			dt {
+				@include span(2);
+				font-size: inherit;
+				&.none {
+					display: block;
+					color: transparent;
+				}
+			}
+			dd {
+				@include span(4);
+				@include last;
+			}
+		}
+	}
+	@include susy-breakpoint($desktop) {
+		@include layout(12 20px/65px);
+		@include span(6);
+	}
+}
+// =======================================
+// setting.html (Setting)
+// =======================================
+.setting {
+	@extend .booking-comfirm;
+	.info {
+		overflow: hidden;
+		> ul {
+			li {
+				border: 0;
+				clear: both;
+				label {
+					font-size: 12px;
+					@include span(full);
+					position: relative;
+					height: $base-line-height;
+					line-height: $base-line-height;
+					padding-left: 16px;
+					margin-top: 4px;
+					&.star:before {
+						@include fa($icon: "\f005", $fz: 10);
+						color: #e66815;
+						position: absolute;
+						left: 0;
+					}
+				}
+				input {
+					font-size: 12px;
+					@include span(full);
+					height: $base-line-height * 2;
+					line-height: $base-line-height * 2;
+					border: 0;
+					border-bottom: 1px solid $border-gray;
+				}
+				input[type=date] {
+					&::-webkit-calendar-picker-indicator:before {
+						font-size: 18px;
+						top: -10px;
+					}
+				}
+				&.select-style {
+					@include span(full);
+					.stb-select-container {
+						width: 100%;
+						height: $base-line-height * 2;
+						line-height: $base-line-height * 2;
+						border: 0;
+						border-bottom: 1px solid $border-gray;
+						.selected {
+							line-height: $base-line-height * 2;
+						}
+						&:after {
+							font-size: 18px;
+							right: 10px;
+						}
+						.stb-select {
+							top: $base-line-height * 2;
+						}
+					}
+				}
+				&:last-child {
+					border: 0;
+				}
+			}
+		}
+	}
+}
+.setting {
+	@include susy-breakpoint($tablet, 8) {
+		.info {
+			> ul {
+				li {
+					label {
+						font-size: 14px;
+						height: $base-line-height * 2;
+						line-height: $base-line-height * 2;
+						@include span(2);
+						margin-top: 0;
+					}
+					input {
+						font-size: 14px;
+						height: $base-line-height * 2;
+						line-height: $base-line-height * 2;
+						@include span(6);
+						@include last;
+					}
+					&.select-style {
+						label {
+							@include span(2);
+						}
+						.stb-select-container {
+							@include span(6);
+							@include last;
+							height: $base-line-height * 2;
+							line-height: $base-line-height * 2;
+							.selected {
+								line-height: $base-line-height * 2;
+							}
+							.stb-select {
+								top: $base-line-height * 2;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	@include susy-breakpoint($desktop, 12) {
+		.info {
+			@include span(7);
+			@include layout(7 20px/65px);
+			> ul {
+				li {
+					label {
+						@include span(2);
+					}
+					input {
+						@include span(5);
+						@include last;
+					}
+					&.select-style {
+						label {
+							@include span(2);
+						}
+						.stb-select-container {
+							@include span(5);
+							@include last;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.setting {
+	.info-box {
+		@extend .pay;
+		padding-bottom: $base-line-height;
+		margin-bottom: 10px;
+		h6 {
+			@include sub-title ($mb: $base-line-height);
+		}
+		div {
+			margin-bottom: $base-line-height * 2;
+			&:last-child {
+				margin-bottom: 0;
+			}
+			.checkbox-title {
+				font-size: 12px;
+			}
+			.checkbox-wrap {
+				margin-top: 10px;
+				.checkbox {
+					label {
+						margin-right: $base-line-height;
+					}
+					&:last-child {
+						label {
+							margin-right: 0;
+						}
+					}
+				}
+			}
+		}
+		.password {
+			li {
+				margin-bottom: 10px;
+				overflow: hidden;
+				clear: both;
+				&:last-child {
+					margin-bottom: 0;
+				}
+				label {
+					font-size: 12px;
+					@include span(5);
+					height: $base-line-height * 2;
+					line-height: $base-line-height * 2;
+				}
+				input {
+					font-size: 12px;
+					@include span(7);
+					@include last;
+					height: $base-line-height * 2;
+					line-height: $base-line-height * 2;
+				}
+			}
+		}
+	}
+	.btn-box {
+		overflow: hidden;
+		margin: $base-line-height 0;
+		[class^='btn-'] {
+			font-size: 18px;
+			height: $base-line-height * 2;
+			line-height: $base-line-height * 2;
+		}
+		.btn-save {
+			@include span(6);
+			@extend .btn-default;
+		}
+		.btn-clear {
+			@extend .btn-cancle;
+			@include span(6);
+			@include last;
+		}
+	}
+}
+.setting {
+	@include susy-breakpoint(640px) {
+		.info-box {
+			.password {
+				@include layout(8 16px/61px);
+				li {
+					label {
+						font-size: 14px;
+						@include span(2);
+					}
+					input {
+						font-size: 14px;
+						@include span(3);
+					}
+				}
+			}
+			div {
+				margin-bottom: $base-line-height;
+				overflow: hidden;
+				.checkbox-title {
+					@include span(6);
+					font-size: 14px;
+				}
+				.checkbox-wrap {
+					@include span(2);
+					@include last;
+					margin-top: 0;
+				}
+			}
+		}
+	}
+	@include susy-breakpoint($desktop) {
+		.info-box,.btn-box {
+			@include layout(12 20px/65px);
+			@include span(5);
+			@include last;
+		}
+		.info-box {
+			div {
+				@include layout(5 20px/65px);
+				margin-bottom: $base-line-height;
+				&:last-child {
+					margin-bottom: 0;
+				}
+				.checkbox-title {
+					@include span(3);
+				}
+				.checkbox-wrap {
+					@include span(2);
+					@include last;
+					margin-top: 10px;
+					.checkbox {
+						label {
+							margin-right: 10px;
+						}
+					}
+				}
+			}
+			.password {
+				li {
+					@include layout(5 20px/65px);
+					label{
+						@include span(2);
+					}
+					input {
+						@include span(3);
+						@include last;
+					}
+				}
+			}
+		}
+		.btn-box {
+			@include layout(2 11px/197px);
+			padding-left: 0;
+			padding-right: 0;
+			margin: 0;
+			.btn-save {
+				@include span(1);
+			}
+			.btn-clear {
+				@include span(1);
+				@include last;
+			}
+		}
+	}
+}

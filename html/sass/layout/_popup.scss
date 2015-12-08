@@ -1,0 +1,137 @@
+.popup-layer {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	text-align: left;
+	background-color: rgba(#000, .55);
+	opacity: 0;
+	visibility: hidden;
+	overflow-y: hidden;
+	z-index: 10000;
+	@include transition(opacity .3s 0s, visibility 0s .3s);
+	&.is-visible {
+		opacity: 1;
+		visibility: visible;
+		@include transition(opacity .3s 0s, visibility 0s 0s);
+	}
+	.container {
+		position: relative;
+		top: 6.5%;
+		max-width: 100%;
+		min-width: 280px;
+		min-height: 250px;
+		background: #fff;
+		border: 1px solid $bg-default-purple;
+		-ms-touch-action: none;
+		touch-action: none;
+		margin: 0 20px;
+		box-sizing: content-box;
+		@include susy-breakpoint($mobile, 6) {
+			@include wh-center($position: relative);
+			max-width: 360px;
+		}
+		.popup-title {
+			font-size: 18px;
+			color: #fff;
+			position: relative;
+			max-width: 100%;
+			line-height: 2.5;
+			padding-left: 20px;
+			padding-right: 10px;
+			background: $bg-default-purple;
+		}
+		.fa-close {
+			position: absolute;
+			top: 0;
+			right: 20px;
+			font-size: 18px;
+			line-height: 2.5;
+			color: $bg-default;
+		}
+		h3+.fa-close {
+			@extend .fa-close;
+			color: #fff;
+		}
+		.pop-list {
+			padding: 30px 20px;
+			dl {
+				width: 100%;
+				font-size: 12px;
+				margin-bottom: 10px;
+				dt {
+					margin-bottom: 6px;
+				}
+				dd {
+					min-height: 30px;
+					input {
+						width: 100%;
+					}
+					textarea {
+						width: 100%;
+						height: 60px;
+					}
+					&.checkbox {
+						display: inline-block;
+						margin-top: 6px;
+						label {
+							vertical-align: super;
+						}
+					}
+				}
+			}
+			.star {
+				font-size: 26px;
+				display: block;
+				width: 100%;
+				text-align: center;
+				.fa {
+					margin-right: 10px;
+					&:last-child {
+						margin-right: 0;
+					}
+				}
+				@include susy-breakpoint($mobile, 6) {
+					font-size: 30px;
+					.fa {
+						margin-right: 16px;
+					}
+				}
+			}
+			.select-style {
+				@include span(full);
+				margin-top: $base-line-height;
+				.stb-select-container {
+					width: 100%;
+				}
+			}
+			.reviews-write {
+				font-size: 12px;
+				color: $font-color-purple;
+				width: 100%;
+				height: 230px;
+				line-height: 2;
+				padding: 10px;
+				margin-top: 5px;
+				margin-bottom: 10px;
+				background: $bg-default;
+			}
+		}
+		.join-pw {
+			font-size: 12px;
+			color: $font-color-purple;
+			text-decoration: underline;
+		}
+		.pop-btn-set {
+			width: 100%;
+			text-align: center;
+			[class^="btn-"] {
+				display: block;
+				max-width: 100%;
+				margin-top: 10px;
+				line-height: 2.5;
+			}
+		}
+	}
+}
