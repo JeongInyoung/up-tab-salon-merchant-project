@@ -96,42 +96,34 @@
 
 		// 토글 버튼
 		var toggleBtn = [
-				$('.login-box-set li .toggle'), //로그인 버튼
+				$('.login-box-set li .toggle'), //로그인 토글
 				$('.hair-style-set li .btn-down'),
 			];
+
+		// 토글 이벤트
+		// for (var i = 0; i <= toggleBtn.length-1; i++) {
+		// 	toggleBtn[i].click(function(e) {
+		// 		e.preventDefault(); // 기본 속성 초기화
+		// 		$(this).toggleClass("active"); // 토글 버튼 제어
+		// 		$(this).next().stop().slideToggle(); // 토글 패널
+		// 	});
+		// 	return;
+		// };
 
 		// 토글 이벤트
 		for (var i = 0; i <= toggleBtn.length-1; i++) {
 			toggleBtn[i].click(function(e) {
 				e.preventDefault(); // 기본 속성 초기화
-				$(this).toggleClass("active"); // 토글 버튼 제어
-				$(this).next().stop().slideToggle(); // 토글 패널
+				if(!$(this).hasClass('active')) {
+					$(this).toggleClass('active');		// 버튼 효과 class="active"로 제어
+					$(this).next().stop().slideToggle();	// 토글 패널 슬라이드 효과
+				} else if($(this).hasClass('active')) {
+					$(this).removeClass('active');		// 버튼 효과 class="active"로 제어
+					$(this).next().stop().slideToggle();	// 토글 패널 슬라이드 효과
+				}
 			});
 			return;
 		};
-
-		// // 토글 패널
-		// 	togglePanel = [
-		// 		$('.login-box-set li ul'), //로그인 패널
-		// 		$('.hair-style-set li .panel'),
-		// 	];
-
-		// 토글 메뉴 이벤트
-		// for (var i = 0; i <= toggleBtn.length-1; i++) {
-		// 	toggleBtn[i].click(function(e) {
-		// 		e.preventDefault();	// 기본 속성 초기화
-		// 		for (var n = 0; n <= toggleBtn.length-1; n++) {
-		// 			if(!toggleBtn[n].hasClass('active')) {
-		// 				toggleBtn[n].toggleClass('active');		// 버튼 효과 class="active"로 제어
-		// 				togglePanel[n].stop().slideToggle();	// 토글 패널 슬라이드 효과
-		// 			} else {
-		// 				toggleBtn[n].toggleClass('active');		// 버튼 효과 class="active"로 제어
-		// 				togglePanel[n].stop().slideToggle();	// 토글 패널 슬라이드 효과
-		// 			}
-		// 			return;
-		// 		}
-		// 	});
-		// };
 
 	})();
 
