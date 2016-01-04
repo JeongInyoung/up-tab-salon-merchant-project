@@ -138,29 +138,14 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
 // =======================================
 // Checkbox Style
 // =======================================
-.checkbox-wrap {
-	.checkbox {
-		display: inline-block;
-		input {
-			display: none;
-		}
-	}
+// input [type=checkbox] & [type=radio] 감추기
+.kalypto {
+	display: none;
 }
-.checkbox {
-	position: relative;
-	label {
-		display: inline-block;
-		font-size: 12px;
-		vertical-align: super;
-		cursor: pointer;
-		.checkbox-label {
-			font-size: 12px;
-			padding-top: 2px;
-		}
-	}
-	input {
-		display: none;
-	}
+.kalypto-label {
+	font-size: 12px;
+	vertical-align: super;
+	cursor: pointer;
 }
 // Kalypto.checked.js 자동 생성 태그 Style 적용
 .k_toggle {
@@ -200,7 +185,7 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
 	font-size: 12px;
 	content: '\f111';
 }
-input[type="radio"] {
+input[type=radio] {
 	display: none;
 	+ label {
 		span {
@@ -394,34 +379,11 @@ input[type=date]::-webkit-calendar-picker-indicator:before {
 					padding-left: 20px;
 					background: $table-th-bg-color;
 				}
-				&:nth-of-type(2) {
-					color: $font-color-purple;
-				}
-			}
-			td:nth-of-type(1):before {
-				content: "Date";
-			}
-			td:nth-of-type(2):before {
-				content: "Salon Name";
-			}
-			td:nth-of-type(3):before {
-				content: "Service";
-			}
-			td:nth-of-type(4):before {
-				content: "Total";
-			}
-			td:nth-of-type(5):before {
-				content: "Status";
-			}
-			td.cancel {
-				color: #bfbfbf;
-				text-decoration: line-through;
-				&:last-child {
-					text-decoration: inherit;
-				}
 			}
 		}
 	}
+}
+.table-set {
 	@include susy-breakpoint($tablet) {
 		width: 100%;
 		th, td {

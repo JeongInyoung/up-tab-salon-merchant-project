@@ -463,8 +463,282 @@
 }
 
 // =======================================
-// book-list.html (Book a Service - Search Salon)
+// booking-upcoming.html (Booking - Upcoming)
 // =======================================
+.title-btn-bg {
+	position: relative;
+	@include span(full);
+	background: $bg-default-purple;
+	border-top: 1px solid #a547c0;
+	clear: both;
+	.title-btn {
+		line-height: $base-line-height * 2;
+		> h3 {
+			@include wh-center;
+			font-size: 100%;
+			color: #eade25;
+			@include susy-breakpoint($mobile, 6) {
+				font-size: initial;
+			}
+		}
+		> a {
+			@include layout(2 0%/50%);
+			font-size: 16px;
+			color: #fff;
+			text-align: center;
+			&:focus, &.selected {
+				color: $font-color-yellow;
+			}
+			&:first-child {
+				@include span(1);
+				border-right: 1px solid #b568cb;
+			}
+			&:last-child {
+				@include span(1);
+				@include last;
+			}
+		}
+	}
+}
+.upcoming-list {
+	padding-top: $base-line-height * 2;
+	padding-bottom: $base-line-height * 2;
+	overflow: hidden;
+	.search-set {
+		@include layout(2 8px/136px);
+		> ul {
+			> li {
+				margin-bottom: 10px;
+				.stb-select-container {
+					height: 40px;
+					&:after {
+						top: 8px;
+					}
+					.selected {
+						height: 38px;
+						line-height: 38px;
+					}
+					.stb-select {
+						top: 39px;
+					}
+				}
+				> input, > button, > select {
+					height: 40px;
+					line-height: 40px;
+				}
+				.upcoming-search {
+					@extend .btn-default;
+					font-size: 16px;
+					.fa-search {
+						font-size: 18px;
+						vertical-align: baseline;
+						margin-right: 10px;
+					}
+				}
+				&:nth-of-type(1) {
+					@include span(full);
+					.stb-select-container {
+						width: 100%;
+					}
+				}
+				&:nth-of-type(2) {
+					@include span(1);
+					.stb-select-container {
+						width: 100%;
+					}
+				}
+				&:nth-of-type(3) {
+					@include span(1);
+					@include last;
+					.stb-select-container {
+						width: 100%;
+					}
+				}
+				&:nth-of-type(4) {
+					@include span(full);
+					input[type=search] {
+						width: 100%;
+					}
+				}
+				&:nth-of-type(5) {
+					@include span(full);
+					@include last;
+					margin-bottom: 0;
+					button {
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+	.total {
+		font-size: 12px;
+		height: 30px;
+		line-height: 30px;
+		clear: both;
+	}
+}
+.upcoming-list {
+	.search-set {
+		@include susy-breakpoint($tablet) {
+			@include layout(8 8px/68px);
+			> ul {
+				> li {
+					&:nth-of-type(1) {
+						@include span(4);
+					}
+					&:nth-of-type(2) {
+						@include span(4);
+						@include last;
+					}
+					&:nth-of-type(3) {
+						@include span(2);
+						margin-bottom: 0;
+					}
+					&:nth-of-type(4) {
+						@include span(4);
+						margin-bottom: 0;
+					}
+					&:nth-of-type(5) {
+						@include span(2);
+						@include last;
+					}
+				}
+			}
+		}
+	}
+}
+.upcoming-list {
+	.search-set {
+		@include susy-breakpoint($desktop) {
+			@include layout(12 8px/76px);
+			> ul {
+				> li {
+					margin-bottom: 0;
+					&:nth-of-type(1) {
+						@include span(3);
+					}
+					&:nth-of-type(2) {
+						@include span(2);
+					}
+					&:nth-of-type(3) {
+						@include span(2);
+					}
+					&:nth-of-type(4) {
+						@include span(3);
+					}
+					&:nth-of-type(5) {
+						@include span(2);
+						@include last;
+					}
+				}
+			}
+		}
+	}
+}
+.upcoming-list {
+	.table-set {
+		tbody {
+			tr {
+				td {
+					padding-left: 170px;
+					&:before {
+						width: 150px;
+					}
+					&:nth-of-type(1) {
+						font-size: 12px;
+						&:before {
+							content: "Date \A Time";
+							white-space:pre;
+						}
+					}
+					&:nth-of-type(2) {
+						color: $font-color-purple;
+						&:before {
+							content: "Store \A Service";
+							white-space:pre;
+						}
+						.service {
+							color: $font-default;
+						}
+					}
+					&:nth-of-type(3) {
+						text-decoration: underline;
+						&:before {
+							content: "Stylist";
+						}
+					}
+					&:nth-of-type(4) {
+						text-decoration: underline;
+						&:before {
+							content: "Customer";
+						}
+					}
+					&:nth-of-type(5):before {
+						content: "Status";
+					}
+				}
+				td.cancel {
+					color: #bfbfbf;
+					text-decoration: line-through;
+					&:last-child {
+						text-decoration: inherit;
+					}
+					.service {
+						color: #bfbfbf;
+					}
+				}
+				td.standby {
+					background: #fefee3;
+					&:last-child {
+						color: $font-color-orange;
+						text-decoration: inherit;
+					}
+				}
+				.stylist {
+					> i {
+						display: none;
+						font-size: 23px;
+						margin-right: 10px;
+					}
+				}
+				.customer {
+					@extend .stylist;
+					> i {
+						font-size: 24px;
+					}
+				}
+			}
+		}
+	}
+	.table-set {
+		@include susy-breakpoint($tablet) {
+			tbody {
+				tr {
+					td {
+						padding-left: 5px;
+						padding-top: 6px;
+						padding-bottom: 6px;
+						&:nth-of-type(1) {
+							line-height: 1.75;
+						}
+						&:nth-of-type(2) {
+							line-height: 1.75;
+						}
+					}
+					.stylist, .customer {
+						> i {
+							display: inline-block;
+							vertical-align: sub;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/*
 .recommend {
 	width: 100%;
 	@extend %bg-common;
@@ -2073,17 +2347,17 @@
 		}
 	}
 }
-.history-list {
-	padding-top: $base-line-height * 2;
-	padding-bottom: $base-line-height * 2;
-	overflow: hidden;
-}
+// .history-list {
+// 	padding-top: $base-line-height * 2;
+// 	padding-bottom: $base-line-height * 2;
+// 	overflow: hidden;
+// }
 
 // =======================================
 // my-appointment-history.html (History)
 // =======================================
 .booking-comfirm {
-	@extend .history-list;
+	// @extend .history-list;
 	padding: 0;
 	@include susy-breakpoint($desktop) {
 		padding: $base-line-height * 2 20px;
@@ -2572,4 +2846,4 @@
 			}
 		}
 	}
-}
+} */
