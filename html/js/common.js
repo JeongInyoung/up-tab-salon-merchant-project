@@ -77,16 +77,13 @@
 
 	// Popup Script
 	// 팝업이 링크 될 요소
-	$('.trigger-pop-login').popupLayer();
+	$('.trigger-pop-upcoming-detail').popupLayer();
 	$('.trigger-pop-reviews').popupLayer();
 	// 위치 이동 드래그 될 팝업창
-	$('.popup-layer .container').draggable({
-		//지정된 영역안에서만 이동
-		containment: "#container"
-	});
-
-	// Select Box Style 설정
-	$('.select-style select').stbDropdown();
+	// $('.popup-layer .container').draggable({
+	// 	//지정된 영역안에서만 이동
+	// 	containment: "#container"
+	// });
 
 	// Store & Designer 검색 input 요소 편집할 수 없게 설정
 	$( '[class$="-search-set"] li input.language' ).attr('readonly', true);
@@ -99,16 +96,6 @@
 				$('.login-box-set li .toggle'), //로그인 토글
 				$('.hair-style-set li .btn-down'),
 			];
-
-		// 토글 이벤트
-		// for (var i = 0; i <= toggleBtn.length-1; i++) {
-		// 	toggleBtn[i].click(function(e) {
-		// 		e.preventDefault(); // 기본 속성 초기화
-		// 		$(this).toggleClass("active"); // 토글 버튼 제어
-		// 		$(this).next().stop().slideToggle(); // 토글 패널
-		// 	});
-		// 	return;
-		// };
 
 		// 토글 이벤트
 		for (var i = 0; i <= toggleBtn.length-1; i++) {
@@ -144,6 +131,75 @@
 			dim.removeClass("close");
 			dim.addClass("open");
 		}
+	});
+
+	// Responsive Table
+	$(doc).ready(function() {
+		var switched = false;
+		var updateTables = function() {
+			if (($(global).width() < 761) && !switched ){
+				switched = true;
+				$("table.responsive").each(function(i, element) {
+					splitTable($(element));
+				});
+				return true;
+			}
+			else if (switched && ($(global).width() > 761)) {
+				switched = false;
+				$("table.responsive").each(function(i, element) {
+					unsplitTable($(element));
+				});
+			}
+		};
+
+		$(global).load(updateTables);
+		$(global).on("redraw",function(){switched=false;updateTables();}); // An event to listen for
+		$(global).on("resize", updateTables);
+
+
+		function splitTable(original)
+		{
+			original.wrap("<div class='table-wrapper' />");
+
+			var copy = original.clone();
+			copy.find("td:not(:first-child), th:not(:first-child)").css("display", "none");
+			copy.removeClass("responsive");
+
+			original.closest(".table-wrapper").append(copy);
+			copy.wrap("<div class='pinned' />");
+			original.wrap("<div class='scrollable' />");
+
+			setCellHeights(original, copy);
+		}
+
+		function unsplitTable(original) {
+			original.closest(".table-wrapper").find(".pinned").remove();
+			original.unwrap();
+			original.unwrap();
+		}
+
+		function setCellHeights(original, copy) {
+			var tr = original.find('tr'),
+					tr_copy = copy.find('tr'),
+					heights = [];
+
+			tr.each(function (index) {
+				var self = $(this),
+						tx = self.find('th, td');
+
+				tx.each(function () {
+					var height = $(this).outerHeight(true);
+					heights[index] = heights[index] || 0;
+					if (height > heights[index]) heights[index] = height;
+				});
+
+			});
+
+			tr_copy.each(function (index) {
+				$(this).height(heights[index] - 1);
+			});
+		}
+
 	});
 
 })(window, document, window.jQuery);

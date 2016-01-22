@@ -1,3 +1,6 @@
+// ==========================================================================
+// Popup Layout Style
+// ==========================================================================
 .popup-layer {
 	position: fixed;
 	left: 0;
@@ -18,48 +21,49 @@
 	}
 	.container {
 		position: relative;
-		top: 6.5%;
-		max-width: 100%;
 		min-width: 280px;
-		min-height: 250px;
+		min-height: 320px;
+		height: 100%;
 		background: #fff;
 		border: 1px solid $bg-default-purple;
 		-ms-touch-action: none;
 		touch-action: none;
-		margin: 0 20px;
 		box-sizing: content-box;
-		@include susy-breakpoint($mobile, 6) {
-			@include wh-center($position: relative);
-			max-width: 360px;
-		}
+		overflow-y: auto;
 		.popup-title {
+			position: relative;
 			font-size: 18px;
 			color: #fff;
-			position: relative;
 			max-width: 100%;
-			line-height: 2.5;
+			height: 40px;
+			line-height: 40px;
 			padding-left: 20px;
-			padding-right: 10px;
+			padding-right: 54px;
 			background: $bg-default-purple;
 		}
 		.fa-close {
 			position: absolute;
 			top: 0;
-			right: 20px;
+			right: 0;
 			font-size: 18px;
-			line-height: 2.5;
-			color: $bg-default;
-		}
-		h3+.fa-close {
-			@extend .fa-close;
 			color: #fff;
+			width: 54px;
+			height: 40px;
+			line-height: 40px;
+			text-align: center;
 		}
 		.pop-list {
 			padding: 30px 20px;
+			textarea {
+				width: 100%;
+				height: 60px;
+				overflow-y: auto;
+			}
 			dl {
 				width: 100%;
 				font-size: 12px;
 				margin-bottom: 10px;
+				overflow: hidden;
 				dt {
 					margin-bottom: 6px;
 				}
@@ -67,10 +71,19 @@
 					min-height: 30px;
 					input {
 						width: 100%;
+						height: 40px;
+						line-height: 40px;
 					}
-					textarea {
+					&.select-style {
 						width: 100%;
-						height: 60px;
+						&:before {
+							line-height: 40px;
+						}
+						> select {
+							max-width: 100%;
+							height: 40px;
+							line-height: 40px;
+						}
 					}
 					&.checkbox {
 						display: inline-block;
@@ -81,56 +94,386 @@
 					}
 				}
 			}
-			.star {
-				font-size: 26px;
-				display: block;
-				width: 100%;
-				text-align: center;
-				.fa {
-					margin-right: 10px;
-					&:last-child {
-						margin-right: 0;
-					}
-				}
-				@include susy-breakpoint($mobile, 6) {
-					font-size: 30px;
-					.fa {
-						margin-right: 16px;
-					}
-				}
-			}
-			.select-style {
-				@include span(full);
-				margin-top: $base-line-height;
-				.stb-select-container {
-					width: 100%;
-				}
-			}
-			.reviews-write {
-				font-size: 12px;
-				color: $font-color-purple;
-				width: 100%;
-				height: 230px;
-				line-height: 2;
-				padding: 10px;
-				margin-top: 5px;
-				margin-bottom: 10px;
-				background: $bg-default;
-			}
-		}
-		.join-pw {
-			font-size: 12px;
-			color: $font-color-purple;
-			text-decoration: underline;
 		}
 		.pop-btn-set {
 			width: 100%;
 			text-align: center;
-			[class^="btn-"] {
-				display: block;
+			[class^="pop-btn-"] {
 				max-width: 100%;
-				margin-top: 10px;
-				line-height: 2.5;
+				margin-top: 40px;
+				margin-bottom: 20px;
+				font-size: 18px !important;
+				height: 40px;
+				line-height: 40px !important;
+			}
+		}
+	}
+	@include susy-breakpoint($mobile) {
+		.container {
+			@include w-center ($position: relative, $w-percent: 50%);
+			max-width: 640px;
+			margin: 0 20px;
+		}
+	}
+}
+
+// ==========================================================================
+// announce-store-announcement.html (Schedule - Store Announcement - Subject Popup)
+// ==========================================================================
+.popup-layer {
+	&.pop-subject {
+		.container {
+			.pop-list {
+				> h2 {
+					color: $font-color-purple;
+					line-height: 1;
+					padding-bottom: $base-line-height;
+				}
+				.time-set {
+					background: $table-th-bg-color;
+					overflow: hidden;
+					margin: 0 -20px;
+					padding: 20px;
+					[class$="-time"] {
+						width: 50%;
+						text-align: center;
+						p:first-child {
+							font-size: 11px;
+							color: $font-color-purple;
+							font-weight: bold;
+							padding-bottom: 6px;
+						}
+					}
+					.start-time {
+						float: left;
+					}
+					.end-time {
+						float: right;
+					}
+				}
+				.notice {
+					font-size: 12px;
+					padding: $base-line-height 0;
+				}
+				.pop-btn-set {
+					a[class^="btn-"] {
+						i.fa {
+							vertical-align: text-top;
+							margin-right: 10px;
+						}
+					}
+					.btn-selected {
+						i.fa {
+							color: $font-color-purple;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+// ==========================================================================
+// schedule-my-schedule.html (Schedule - My Schedule - Add Schedule Popup)
+// ==========================================================================
+.popup-layer {
+	&.pop-add-schedule {
+		.container {
+			margin: 0;
+			.pop-list {
+				dl {
+					dt {
+						line-height: 1.8em;
+					}
+					dd {
+						line-height: 40px;
+					}
+					&:nth-of-type(1) {
+						dd {
+							@include span(full);
+							height: 40px;
+							select {
+								max-width: 100%;
+								height: 40px;
+							}
+						}
+					}
+					&:nth-of-type(2) {
+						dd {
+							@include layout(7 0px/40px);
+							overflow: hidden;
+							input[type=checkbox] + label span {
+								font-size: 11px;
+								min-width: 34px;
+								@include span(1);
+							}
+						}
+					}
+					&:nth-of-type(3) {
+						dd {
+							overflow: hidden;
+							span {
+								float: left;
+								width: 4%;
+								text-align: center;
+							}
+							.select-style {
+								float: left;
+								width: 48%;
+								&:before {
+									top: -1px;
+									right: 10px;
+									content: "\f017";
+									font-size: 24px;
+								}
+								select {
+									min-width: 100%;
+									height: 40px;
+									padding-right: 40px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.popup-layer {
+	&.pop-add-schedule {
+		.container {
+			.pop-list {
+				p.memo-title {
+					font-size: 12px;
+					color: #fff;
+					padding: 6px 10px;
+					background: $bg-default-purple;
+				}
+				textarea.memo-write {
+					height: 80px;
+				}
+			}
+		}
+	}
+}
+.popup-layer {
+	&.pop-add-schedule {
+		.container {
+			.pop-list {
+				.pop-btn-set {
+					overflow: hidden;
+					a[class^="pop-btn-"] {
+						@include layout(4 16px/68px);
+						&:first-child {
+							@include span(2);
+						}
+						&:last-child {
+							@include span(2);
+							@include last;
+						}
+					}
+					.pop-btn-add {
+						@extend .btn-cancle;
+					}
+					.pop-btn-save {
+						@extend .btn-default;
+					}
+				}
+			}
+		}
+		@include susy-breakpoint($mobile) {
+			.container {
+				.pop-list {
+					dl {
+						@include layout(8 16px/61px);
+						overflow: hidden;
+						&:nth-of-type(3) {
+							dd {
+								span {
+									width: 4%;
+								}
+								.select-style {
+									width: 48%;
+								}
+							}
+						}
+					}
+					.pop-btn-set {
+						a[class^="pop-btn-"] {
+							&:first-child {
+								@include span(4);
+							}
+							&:last-child {
+								@include span(4);
+								@include last;
+							}
+						}
+					}
+				}
+			}
+		}
+		@include susy-breakpoint($tablet) {
+			.container {
+				.pop-list {
+					dl {
+						dt, dd {
+							line-height: 40px;
+						}
+						dt {
+							@include span(1);
+						}
+						dd {
+							@include span(7);
+							@include last;
+						}
+						&:nth-of-type(1) {
+							dd {
+								@include span(7);
+								@include last;
+							}
+						}
+						&:nth-of-type(2) {
+							dt {
+								line-height: 1.8em;
+							}
+						}
+						&:nth-of-type(3) {
+							dd {
+								span {
+									width: 6%;
+								}
+								.select-style {
+									width: 47%;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+// ==========================================================================
+// announce-request-time-off.html (Announce -Request Time off - Request Time off Popup)
+// ==========================================================================
+.popup-layer {
+	&.pop-request-time-off {
+		@extend .pop-add-schedule;
+		.container {
+			.pop-list {
+				.pop-btn-set {
+					.pop-btn-cancel {
+						@include btn-default($bg-color: #555);
+					}
+					.pop-btn-add {
+						@include btn-default;
+					}
+				}
+				dl {
+					margin-bottom: 4px;
+					&:nth-of-type(2) {
+						margin-bottom: 0;
+					}
+					&:nth-of-type(4) {
+						margin-bottom: 10px;
+					}
+				}
+			}
+		}
+	}
+}
+.popup-layer {
+	&.pop-request-time-off {
+		@include susy-breakpoint($mobile, 6) {
+			.container {
+				.pop-list {
+					dl {
+						dt, dd {
+							line-height: 40px;
+						}
+					}
+					dl:nth-of-type(1) {
+						dt {
+							@include span(1);
+						}
+						dd {
+							@include span(5);
+							@include last;
+						}
+					}
+					dl:nth-of-type(2) {
+						margin-bottom: 4px;
+						dt {
+							@include span(1);
+						}
+						dd {
+							@include span(3);
+						}
+					}
+					dl:nth-of-type(3) {
+						dt {
+							@include span(1);
+						}
+						dd {
+							@include span(3);
+						}
+					}
+					dl:nth-of-type(4) {
+						margin-bottom: 4px;
+						dt {
+							@include span(1);
+						}
+						dd {
+							@include span(3);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.popup-layer {
+	&.pop-request-time-off {
+		@include susy-breakpoint($tablet, 8) {
+			.container {
+				.pop-list {
+					dl:nth-of-type(1) {
+						dt {
+							@include span(1);
+						}
+						dd {
+							@include span(7);
+							@include last;
+						}
+					}
+					dl:nth-of-type(2) {
+						dt {
+							@include span(1);
+							line-height: 40px;
+						}
+						dd {
+							@include span(4);
+						}
+					}
+					dl:nth-of-type(3) {
+						dt {
+							@include span(1);
+							letter-spacing: -0.02em;
+						}
+						dd {
+							@include span(4);
+						}
+					}
+					dl:nth-of-type(4) {
+						dt {
+							@include span(1);
+						}
+						dd {
+							@include span(4);
+						}
+					}
+				}
 			}
 		}
 	}
