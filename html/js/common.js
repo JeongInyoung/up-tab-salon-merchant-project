@@ -94,7 +94,7 @@
 		// 토글 버튼
 		var toggleBtn = [
 				$('.login-box-set li .toggle'), //로그인 토글
-				$('.hair-style-set li .btn-down'),
+				$('.hair-style-set li .btn-down'), //스테프 토글
 			];
 
 		// 토글 이벤트
