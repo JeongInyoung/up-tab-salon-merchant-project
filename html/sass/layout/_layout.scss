@@ -819,6 +819,12 @@
 			@extend %bg-common;
 			display: none;
 		}
+		.week-time {
+			li {
+				padding-bottom: 1px;
+				line-height: 20px;
+			}
+		}
 		&:first-child {
 			.panel {
 				display: block;
@@ -831,35 +837,6 @@
 			}
 			.panel {
 				display: block;
-			}
-		}
-	}
-}
-.hair-style-set {
-	> li {
-		.week-time {
-			li {
-				font-size: 12px;
-				padding-bottom: 1px;
-				line-height: 20px;
-				span {
-					background: $bg-default;
-					display: inline-block;
-					width: 36px;
-					color: #333;
-					text-align: center;
-					margin-right: 16px;
-				}
-				&:first-child {
-					span {
-						background: #f3acac;
-					}
-				}
-				&:last-child {
-					span {
-						background: #c1dce7;
-					}
-				}
 			}
 		}
 	}
@@ -953,7 +930,7 @@
 				> li:nth-of-type(4) {
 					margin-top: 20px;
 					.cell {
-						[class^="btn-"] {
+						[class*="btn-"] {
 							@include layout(2 10px/135px);
 							width: 100%;
 							line-height: 2;

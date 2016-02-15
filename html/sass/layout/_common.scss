@@ -717,6 +717,7 @@ select::-ms-expand {
 	color: $font-color-purple;
 	margin-bottom: $mb;
 }
+
 // 서브 상단 진행상황 스타일
 .progress {
 	width: 100%;
@@ -785,6 +786,7 @@ select::-ms-expand {
 		}
 	}
 }
+
 // 서브 상단 컬럼 갯 수
 .title-btn-bg {
 	position: relative;
@@ -831,6 +833,7 @@ select::-ms-expand {
 		}
 	}
 }
+
 // 아이템 그룹 배치 (버튼, 체크박스, 라이오버튼 등)
 .line-group-set {
 	overflow: hidden;
@@ -955,6 +958,7 @@ span.star {
 		}
 	}
 }
+
 // 리스트 더보기 버튼
 .btn-more {
 	width: 235px;
@@ -978,6 +982,7 @@ span.star {
 		width: 490px;
 	}
 }
+
 // 자주 사용 아이콘 스타일
 [class^="selected-"] {
 	font-size: 14px;
@@ -1008,4 +1013,35 @@ span.star {
 	font-size: 20px;
 	position: absolute;
 	left: 0;
+}
+.selected-customer:before {
+	@include fa($icon: "\f007", $fz: 24);
+	position: absolute;
+	top: -5px;
+	left: 0;
+}
+
+// 주간 리스트
+ol.week-time {
+	li {
+		font-size: 12px;
+		span {
+			background: $bg-default;
+			display: inline-block;
+			width: 36px;
+			color: #333;
+			text-align: center;
+			margin-right: 16px;
+		}
+		&:first-child {
+			span {
+				background: #f3acac;
+			}
+		}
+		&:last-child {
+			span {
+				background: #c1dce7;
+			}
+		}
+	}
 }

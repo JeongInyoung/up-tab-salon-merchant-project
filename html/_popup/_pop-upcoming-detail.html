@@ -1,20 +1,41 @@
 <div class="popup-layer pop-upcoming-detail" role="alert">
 	<div class="container">
-		<h3 class="popup-title">Reviews</h3>
+		<h3 class="popup-title">Booking Detail</h3>
 		<a href="#" class="close fa fa-close"  rel="modal:close" aria-lable="창 닫기"></a>
 		<div class="pop-list">
-			<span class="star"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-o"></i></span>
-			<div class="select-style">
-				<select>
-					<option value="">Designer</option>
-					<option value="">Designer 1</option>
-					<option value="">Designer 2</option>
-					<option value="">Designer 3</option>
-				</select>
+			<div class="info">
+				<h5>Suite Styles Salon</h5>
+				<ul>
+					<li><p class="selected-day">07/22/2015</p></li>
+					<li>
+						<div class="service">
+							<h4>Service1</h4>
+							<p class="selected-choice">Hair Color and Other</p>
+							<p class="selected-designer">Karen Dals</p>
+						</div>
+						<div class="service">
+							<h4>Service2</h4>
+							<p class="selected-choice">Color and Blow Dry</p>
+							<p class="selected-designer">Karen Dals</p>
+						</div>
+					</li>
+					<li><p class="selected-time">1:00PM ~ 2:00PM</p></li>
+					<li><p class="selected-customer">Michael R</p></li>
+				</ul>
 			</div>
-			<textarea class="reviews-write" name="reviews" placeholder="Select Rating"></textarea>
-			<div class="pop-btn-set">
-				<a class="btn-default" role="button" href="">Save</a>
+			<div class="pay">
+				<p class="service"><span>service 1</span><span>$40.00</span></p>
+				<p class="service"><span>service 2</span><span>$50.00</span></p>
+				<p class="total">$90.00</p>
+				<div class="pop-btn-set">
+					<button class="btn-reschedule">Reschedule</button>
+					<button class="btn-cancel">Cancel</button>
+					<button class="btn-comfirm">Comfirm</button>
+					<!-- Comfirm button 클릭 시 아래와 같이 class="default" 삽입 -->
+					<!-- <button class="btn-comfirm default">Comfirm</button> -->
+				</div>
+				<!-- Comfirm button 클릭 시 아래 단락 요소 추가 -->
+				<!-- <p class="request-by"><span>Request by</span>Reschedule : Karen Dals l  Comform : Karen Dals</p> -->
 			</div>
 		</div>
 	</div>

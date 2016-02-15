@@ -78,7 +78,9 @@
 	// Popup Script
 	// 팝업이 링크 될 요소
 	$('.trigger-pop-upcoming-detail').popupLayer();
-	$('.trigger-pop-reviews').popupLayer();
+	$('.trigger-pop-upcoming-stylist').popupLayer();
+	$('.trigger-pop-upcoming-customer').popupLayer();
+	$('.trigger-pop-time-off-request').popupLayer();
 	// 위치 이동 드래그 될 팝업창
 	// $('.popup-layer .container').draggable({
 	// 	//지정된 영역안에서만 이동
